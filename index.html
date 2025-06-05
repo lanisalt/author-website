@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- import fonts here -->
+
+    <title>Author Website</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  
+  <body>
+      <!-- menu header -->
+    <div id="header-placeholder"></div>
+    <!-- load header -->
+    <script>
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header-placeholder").innerHTML = html;
+        });
+    </script>
+
+    <div class="container">
+      <header>
+        <!-- edit author headshot below -->
+        <img
+          src="https://cdn.glitch.global/e86c1ef1-626b-405f-9b0c-d91b6196579b/picture%20of%20myself.jpg?v=1747025849545"
+          alt="Author Headshot"
+        />
+        <h1>Lani Salt</h1>
+        <p> 
+          Writer& Student 
+        </p>
+      </header>
+
+      <section class="bio">
+        <!-- edit author bio below -->
+        <p>
+          Taulani Salt is an RMIT Creative Writing student and fiction writer from the Mornington Peninsula.
+          Her seaside hometown is often a source of inspiration in her writing, as well as her interests in history, fashion
+          and medicine.
+          When she's not writing sweeping historical romances or working on assignments, she can be found
+          lounging on her hometown beach, brewing her fifth cup of tea for the day,
+          or waiting tables at her local whiskey bar.
+    <p>
+      
+        </p>
+          Lani Currently has one publication with RMIT's own Bowen St. Press.
+        </p>
+        
+      </section>
+
+      <section class="Projects">
+        <h2>Projects</h2>
+        <!-- edit author publications below, creating new list items -->
+        <ul>
+          <li><a href="#"> Tidal (2025)</a></li>
+          <li><a href="#">Lobster Story (2025)</a></li>
+          <li><a href="#">Eureka (2024)</a></li>
+          <li>
+            <a href="./projects.html"
+              >Other projects (see full list)</a
+            >
+          </li>
+        </ul>
+      </section>
+
+  
+
+      <section class="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:taulani@salt.id.au">taulani@salt.id.au</a>
+        </p>
+
+    </section>
+
+      <section class="socials">
+        <h2>Follow</h2>
+        <p>
+          <a href="https://twitter.com/thislani">Twitter</a> |
+          <a href="https://instagram.com/taulani.salt">Instagram</a> |
+          <a href="https://linkedin.com/in/taulanisalt">LinkedIn</a>
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
