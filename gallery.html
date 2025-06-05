@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artist Feature Gallery</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- menu header -->
+<div id="header-placeholder"></div>
+<!-- load header -->
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+<div class="gallery">
+  
+
+  <div class="feature-box" id="featureBox">
+    <img id="featureImg" src="https://cdn.glitch.global/7004fb2b-210d-464f-acbf-cc930f15cb46/headshot.jpg?v=1746156781259" alt="Featured Art">
+    <h2 id="featureTitle">Featured Artist: Jane Doe</h2>
+    <p id="featureDesc">This spotlight showcases the powerful, emotional narrative behind this particular work. It reflects the artist's ongoing exploration of identity and transformation through visual storytelling.</p>
+    <p id="featureMeta"><small>Medium: Oil on Canvas | Year: 2024</small></p>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="previousFeature()">Previous</button>
+    <button onclick="nextFeature()">Next</button>
+  </div>
+  </div>
+  <script>
+    const features = [
+      {
+        img: "https://cdn.glitch.global/e86c1ef1-626b-405f-9b0c-d91b6196579b/lighthouse%20drawing.jpg?v=1747632002290",
+        title: "Lighthouse",
+        desc: "This drawing is based on the Pigeon Point lighthouse in California, USA.",
+        meta: "Medium: Coloured pencil and ink on paper | Year: 2024"
+      },
+      {
+        img: "https://cdn.glitch.global/e86c1ef1-626b-405f-9b0c-d91b6196579b/silver%20gull.jpg?v=1747029057329",
+        title: "Silver Gull",
+        desc: "The silver gull is a common seabird native to Oceania, often overlooked or seen as a pest to innocent beachgoers trying to enjoy their fish and chips in peace. However, They're my personal favourite bird. I find them quite striking .",
+        meta: "Medium: Coloured pencil and ink on paper | Year: 2024"
+      },
+      {
+        img: "https://cdn.glitch.global/e86c1ef1-626b-405f-9b0c-d91b6196579b/puffin.jpg?v=1747029079818",
+        title: "Puffin",
+        desc: "My second ever venture into watercolour painting. I clearly like seabirds.",
+        meta: "Medium: Watercolour, ink and coloured pencil on paper | Year: 2024"
+      }
+    ];
+
+    let current = 0;
+
+    function updateFeature() {
+      const feature = features[current];
+      document.getElementById('featureImg').src = feature.img;
+      document.getElementById('featureTitle').textContent = feature.title;
+      document.getElementById('featureDesc').textContent = feature.desc;
+      document.getElementById('featureMeta').textContent = feature.meta;
+    }
+
+    function nextFeature() {
+      current = (current + 1) % features.length;
+      updateFeature();
+    }
+
+    function previousFeature() {
+      current = (current - 1 + features.length) % features.length;
+      updateFeature();
+    }
+  </script>
+</body>
+</html>
